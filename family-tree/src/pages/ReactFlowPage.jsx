@@ -187,39 +187,63 @@ const nodes2 = [
 	{
 		id: "D",
 		type: "personNode",
-		position: { x: 140, y: 250 },
+		position: { x: 440, y: 250 },
 		data: { label: "D" },
 	},
 	{
 		id: "E",
 		type: "personNode",
-		position: { x: 400, y: 250 },
+		position: { x: 200, y: 250 },
 		data: { label: "E" },
 	},
 	{
 		id: "1",
 		type: "personNode",
-		position: { x: 260, y: 250 },
+		position: { x: 560, y: 250 },
 		data: { label: "1" },
 	},
 	// Connector for D-1
 	{
 		id: "connector-D-1",
 		type: "connectorNode",
-		position: { x: 240, y: 270 },
+		position: { x: 540, y: 270 },
 		data: {},
 	},
 	{
 		id: "2",
 		type: "personNode",
-		position: { x: 140, y: 350 },
+		position: { x: 440, y: 350 },
 		data: { label: "2" },
 	},
 	{
 		id: "3",
 		type: "personNode",
-		position: { x: 260, y: 350 },
+		position: { x: 560, y: 350 },
 		data: { label: "3" },
+	},
+	{
+		id: "4",
+		type: "personNode",
+		position: { x: 500, y: 100 },
+		data: { label: "4" },
+	},
+	{
+		id: "5",
+		type: "personNode",
+		position: { x: 620, y: 100 },
+		data: { label: "5" },
+	},
+	{
+		id: "connector-4-5",
+		type: "connectorNode",
+		position: { x: 600, y: 120 },
+		data: {},
+	},
+	{
+		id: "6",
+		type: "personNode",
+		position: { x: 620, y: 0 },
+		data: { label: "6" },
 	},
 ];
 
@@ -346,134 +370,166 @@ const blankNodes = [
 	},
 ];
 
-// const edges = [
-// 	// F-G to A
-// 	{
-// 		id: "F-connector",
-// 		source: "F",
-// 		sourceHandle: "right",
-// 		target: "connector-F-G",
-// 		targetHandle: "left-in",
-// 		type: "straight",
-// 	},
-// 	{
-// 		id: "G-connector",
-// 		source: "G",
-// 		sourceHandle: "left",
-// 		target: "connector-F-G",
-// 		targetHandle: "right-in",
-// 		type: "straight",
-// 	},
-// 	{
-// 		id: "connector-A",
-// 		source: "connector-F-G",
-// 		sourceHandle: "bottom-out",
-// 		target: "A",
-// 		targetHandle: "top",
-// 		type: "straight",
-// 	},
+const edges2 = [
+	// F-G to A
+	{
+		id: "F-connector",
+		source: "F",
+		sourceHandle: "right",
+		target: "connector-F-G",
+		targetHandle: "left-in",
+		type: "straight",
+	},
+	{
+		id: "G-connector",
+		source: "G",
+		sourceHandle: "left",
+		target: "connector-F-G",
+		targetHandle: "right-in",
+		type: "straight",
+	},
+	{
+		id: "connector-A",
+		source: "connector-F-G",
+		sourceHandle: "bottom-out",
+		target: "A",
+		targetHandle: "top",
+		type: "straight",
+	},
 
-// 	// H-I to B
-// 	{
-// 		id: "H-connector",
-// 		source: "H",
-// 		sourceHandle: "right",
-// 		target: "connector-H-I",
-// 		targetHandle: "left-in",
-// 		type: "straight",
-// 	},
-// 	{
-// 		id: "I-connector",
-// 		source: "I",
-// 		sourceHandle: "left",
-// 		target: "connector-H-I",
-// 		targetHandle: "right-in",
-// 		type: "straight",
-// 	},
-// 	{
-// 		id: "connector-B",
-// 		source: "connector-H-I",
-// 		sourceHandle: "bottom-out",
-// 		target: "B",
-// 		targetHandle: "top",
-// 		type: "straight",
-// 	},
+	// H-I to B
+	{
+		id: "H-connector",
+		source: "H",
+		sourceHandle: "right",
+		target: "connector-H-I",
+		targetHandle: "left-in",
+		type: "straight",
+	},
+	{
+		id: "I-connector",
+		source: "I",
+		sourceHandle: "left",
+		target: "connector-H-I",
+		targetHandle: "right-in",
+		type: "straight",
+	},
+	{
+		id: "connector-B",
+		source: "connector-H-I",
+		sourceHandle: "bottom-out",
+		target: "B",
+		targetHandle: "top",
+		type: "straight",
+	},
 
-// 	// A-B to children C, D, E
-// 	{
-// 		id: "A-connector",
-// 		source: "A",
-// 		sourceHandle: "right",
-// 		target: "connector-A-B",
-// 		targetHandle: "left-in",
-// 		type: "straight",
-// 	},
-// 	{
-// 		id: "B-connector",
-// 		source: "B",
-// 		sourceHandle: "left",
-// 		target: "connector-A-B",
-// 		targetHandle: "right-in",
-// 		type: "straight",
-// 	},
-// 	{
-// 		id: "connector-C",
-// 		source: "connector-A-B",
-// 		sourceHandle: "bottom-out",
-// 		target: "C",
-// 		targetHandle: "top",
-// 		type: "step",
-// 	},
-// 	{
-// 		id: "connector-D",
-// 		source: "connector-A-B",
-// 		sourceHandle: "bottom-out",
-// 		target: "D",
-// 		targetHandle: "top",
-// 		type: "step",
-// 	},
-// 	{
-// 		id: "connector-E",
-// 		source: "connector-A-B",
-// 		sourceHandle: "bottom-out",
-// 		target: "E",
-// 		targetHandle: "top",
-// 		type: "step",
-// 	},
-// 	// D to 1
-// 	{
-// 		id: "D-connector2",
-// 		source: "D",
-// 		sourceHandle: "right",
-// 		target: "connector-D-1",
-// 		targetHandle: "left-in",
-// 		type: "straight",
-// 	},
-// 	{
-// 		id: "1-connector",
-// 		source: "1",
-// 		sourceHandle: "left",
-// 		target: "connector-D-1",
-// 		targetHandle: "right-in",
-// 		type: "straight",
-// 	},
-// 	{
-// 		id: "2-connector",
-// 		source: "connector-D-1",
-// 		sourceHandle: "bottom-out",
-// 		target: "2",
-// 		targetHandle: "top",
-// 		type: "step",
-// 	},
-// 	{
-// 		id: "3-connector",
-// 		source: "connector-D-1",
-// 		sourceHandle: "bottom-out",
-// 		target: "3",
-// 		targetHandle: "top",
-// 		type: "step",
-// 	},
-// ];
+	// A-B to children C, D, E
+	{
+		id: "A-connector",
+		source: "A",
+		sourceHandle: "right",
+		target: "connector-A-B",
+		targetHandle: "left-in",
+		type: "straight",
+	},
+	{
+		id: "B-connector",
+		source: "B",
+		sourceHandle: "left",
+		target: "connector-A-B",
+		targetHandle: "right-in",
+		type: "straight",
+	},
+	{
+		id: "connector-C",
+		source: "connector-A-B",
+		sourceHandle: "bottom-out",
+		target: "C",
+		targetHandle: "top",
+		type: "step",
+	},
+	{
+		id: "connector-D",
+		source: "connector-A-B",
+		sourceHandle: "bottom-out",
+		target: "D",
+		targetHandle: "top",
+		type: "step",
+	},
+	{
+		id: "connector-E",
+		source: "connector-A-B",
+		sourceHandle: "bottom-out",
+		target: "E",
+		targetHandle: "top",
+		type: "step",
+	},
+	// D to 1
+	{
+		id: "D-connector2",
+		source: "D",
+		sourceHandle: "right",
+		target: "connector-D-1",
+		targetHandle: "left-in",
+		type: "straight",
+	},
+	{
+		id: "1-connector",
+		source: "1",
+		sourceHandle: "left",
+		target: "connector-D-1",
+		targetHandle: "right-in",
+		type: "straight",
+	},
+	{
+		id: "1-connector2",
+		source: "connector-4-5",
+		sourceHandle: "bottom-out",
+		target: "1",
+		targetHandle: "top",
+		type: "straight",
+	},
+	{
+		id: "2-connector",
+		source: "connector-D-1",
+		sourceHandle: "bottom-out",
+		target: "2",
+		targetHandle: "top",
+		type: "step",
+	},
+	{
+		id: "3-connector",
+		source: "connector-D-1",
+		sourceHandle: "bottom-out",
+		target: "3",
+		targetHandle: "top",
+		type: "step",
+	},
+	{
+		id: "4-connector",
+		source: "4",
+		sourceHandle: "right",
+		target: "connector-4-5",
+		targetHandle: "left-in",
+		type: "straight",
+	},
+	{
+		id: "5-connector",
+		source: "5",
+		sourceHandle: "left",
+		target: "connector-4-5",
+		targetHandle: "right-in",
+		type: "stright",
+	},
+	{
+		id: "6-connector",
+		source: "6",
+		sourceHandle: "bottom",
+		target: "5",
+		targetHandle: "top",
+		type: "stright",
+	},
+];
 
 const edges = [];
 
@@ -498,8 +554,8 @@ const ReactFlowPage = () => {
 				</button>
 			</div>
 			<ReactFlow
-				nodes={nodes}
-				edges={edges}
+				nodes={nodes2}
+				edges={edges2}
 				nodeTypes={nodeTypes}
 				defaultEdgeOptions={{
 					style: {
